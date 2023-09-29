@@ -7,6 +7,11 @@ cypress/reports/*
 cypress/screenshots/*
 cypress/videos/*
 
+# ignore cypress test templates
+
+cypress/e2e/1-getting-started/*
+cypress/e2e/2-advanced-examples/*
+
 ### Node ###
 # Logs
 logs
