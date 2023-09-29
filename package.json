@@ -1,0 +1,16 @@
+{
+  "name": "cypress-challenge",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [
+    "ui-testing",
+    "practice",
+    "cypress"
+  ],
+  "author": "Elena Correa helloelenacorrea@gmail.com https://github.com/melenabelt",
+  "license": "MIT"
+}
