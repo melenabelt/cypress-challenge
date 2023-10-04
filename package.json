@@ -17,6 +17,7 @@
   "author": "Elena Correa helloelenacorrea@gmail.com https://github.com/melenabelt",
   "license": "MIT",
   "devDependencies": {
+<<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "cypress": "^13.3.0",
     "eslint": "^8.50.0",
@@ -25,6 +26,9 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-promise": "^6.1.1",
+=======
+    "cypress": "^13.3.0",
+>>>>>>> fcbea2841a539f832e219c3fb12035ecb31247f6
     "typescript": "^5.2.2"
   }
 }
