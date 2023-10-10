@@ -1,5 +1,5 @@
 import DetailPage from "../pages/detailPage";
-import '../support/loginBeforeEach'
+import "../support/loginBeforeEach"
 
 const detailPage = new DetailPage();
 

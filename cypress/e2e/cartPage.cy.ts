@@ -1,6 +1,6 @@
 import CartPage from "../pages/cartPage";
 import DetailPage from "../pages/detailPage";
-import '../support/loginBeforeEach'
+import "../support/loginBeforeEach"
 
 
 const cartPage = new CartPage();

@@ -1,5 +1,5 @@
 import IndexPage from "../pages/indexPage";
-import '../support/loginBeforeEach'
+import "../support/loginBeforeEach"
 
 const indexPage = new IndexPage();
 
