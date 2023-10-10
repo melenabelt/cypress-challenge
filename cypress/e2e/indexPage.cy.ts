@@ -5,9 +5,6 @@ const indexPage = new IndexPage();
 
 describe("Login", () => {
 
-    it("Validate login is successful", () => {
-    });
-
     it("Validate username is correct", () => {
         indexPage.validateUsernameAfterLogin();
     }); 
