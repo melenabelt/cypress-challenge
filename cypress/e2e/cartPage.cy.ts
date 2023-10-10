@@ -7,29 +7,29 @@ const cartPage = new CartPage();
 const detailPage = new DetailPage();
 
 
-describe('Make a purchase', () => {
+describe("Make a purchase", () => {
     beforeEach(() => {
     })
 
-    it('Validate add some products to cart', () => {
+    it("Validate add some products to cart", () => {
         cartPage.validateAddingRandomProductToCart();
     })
 
-    it('Validate add some products to cart', () => {
+    it("Validate add some products to cart", () => {
         cartPage.validateAddingRandomProductToCart();
     })
 
-    it('Validate add some products to cart', () => {
+    it("Validate add some products to cart", () => {
         cartPage.validateAddingRandomProductToCart();
     })
 
-    it('Validate total prices are equal', () => {
+    it("Validate total prices are equal", () => {
         cy.visit("cart.html")
-        cy.wait(5000)
+        // cy.wait(5000)
         detailPage.validateTotalPrices();
     })
 
-    it('Validate purchase is successful', () => {
+    it("Validate purchase is successful", () => {
         cy.visit("cart.html")
         cartPage.validatePlaceOrder();
     })

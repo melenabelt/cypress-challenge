@@ -3,18 +3,18 @@ import '../support/loginBeforeEach'
 
 const indexPage = new IndexPage();
 
-describe('Login', () => {
+describe("Login", () => {
 
-    it('Validate login is successful', () => {
+    it("Validate login is successful", () => {
     });
 
-    it('Validate username is correct', () => {
+    it("Validate username is correct", () => {
         indexPage.validateUsernameAfterLogin();
     }); 
 });
 
-describe('Contact', () => {
-    it('Validate a contact message is sent succesfully', () => {
+describe("Contact", () => {
+    it("Validate a contact message is sent succesfully", () => {
         indexPage.validateContactMsgIsSent();
     })
 })
