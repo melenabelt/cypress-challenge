@@ -8,8 +8,6 @@ const detailPage = new DetailPage();
 
 
 describe("Make a purchase", () => {
-    beforeEach(() => {
-    })
 
     it("Validate add some products to cart", () => {
         cartPage.validateAddingRandomProductToCart();

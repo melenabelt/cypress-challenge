@@ -4,8 +4,6 @@ import "../support/loginBeforeEach"
 const detailPage = new DetailPage();
 
 describe("Add product to cart", () => {
-    beforeEach(() => {
-    });
 
     it("Validate phone product was successfully added to cart", () => {
         detailPage.choosePhonesCategory();
