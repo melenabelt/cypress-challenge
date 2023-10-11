@@ -8,7 +8,7 @@ module.exports = defineConfig({
     baseUrl: "https://www.demoblaze.com/",
     env: {
       demoqaUrl: "https://demoqa.com/",
-      fileUploaderUrl: "https://the-internet.herokuapp.com/"
+      fileUploaderUrl: "https://the-internet.herokuapp.com/",
     },
     defaultCommandTimeout: 20000,
     pageLoadTimeout: 20000,
