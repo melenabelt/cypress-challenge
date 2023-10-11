@@ -1,11 +1,10 @@
 import { formLocators } from "../support/demoqaLocators";
 
-
 class DemoQaFormPage {
   constructor() {}
 
   fillForm() {
-    return cy.fixture("demoqaUserDataForm.json").then((userdata) => {
+    cy.fixture("demoqaUserDataForm.json").then((userdata) => {
       cy.get(formLocators.firstNameInput).type(userdata.firstname, {
         force: true,
       });
@@ -19,17 +18,15 @@ class DemoQaFormPage {
         .check({ force: true });
       cy.get(formLocators.mobileInput).type(userdata.mobile, { force: true });
 
-
-      const dateParts = userdata.dateofbirth.split(' ');
+      const dateParts = userdata.dateofbirth.split(" ");
       const month = dateParts[1];
       const year = dateParts[2];
       const day = dateParts[0];
-      
-      cy.get(formLocators.dateOfBirthDateContainer).click()
-      cy.get(formLocators.dateofBirthDateMonthSel).select(month)
-      cy.get(formLocators.dateofBirthDateYearSel).select(year)
-      cy.get(formLocators.dateofBirthDateDayList).contains(day).click();
 
+      cy.get(formLocators.dateOfBirthDateContainer).click();
+      cy.get(formLocators.dateofBirthDateMonthSel).select(month);
+      cy.get(formLocators.dateofBirthDateYearSel).select(year);
+      cy.get(formLocators.dateofBirthDateDayList).contains(day).click();
 
       // Select every specified hobby
       userdata.hobbies.forEach((hobby: string) => {
@@ -44,11 +41,13 @@ class DemoQaFormPage {
       });
 
       cy.get(formLocators.submitButton).click({ force: true });
-    });
-  }
 
-  validateTitleAfterFillingForm(){
-    cy.get(formLocators.formSentModalTitle).should('contain', "Thanks for submitting the form");
+      cy.get(formLocators.formSentModalTitle).should(
+        "contain",
+        "Thanks for submitting the form"
+      );
+
+    });
   }
 }
 

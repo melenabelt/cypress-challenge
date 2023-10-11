@@ -12,7 +12,6 @@ describe("File Uploader", () => {
 
     it("Validate File Is Uploaded Succesfully", () => {
         uploadFilePage.validateFileIsUploadedSuccesfully();
-
     })
 
 })

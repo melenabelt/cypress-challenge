@@ -11,10 +11,7 @@ describe("Form", () => {
     });
 
     it("Validate form is filled succesfully", () => {
-        demoQaFormPage.fillForm().then(() => {
-            demoQaFormPage.validateTitleAfterFillingForm();
-          });
+        demoQaFormPage.fillForm();
     })
-
 })
 
