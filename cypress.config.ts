@@ -10,8 +10,8 @@ module.exports = defineConfig({
       demoqaUrl: "https://demoqa.com/",
       fileUploaderUrl: "https://the-internet.herokuapp.com/",
     },
-    defaultCommandTimeout: 20000,
-    pageLoadTimeout: 20000,
+    defaultCommandTimeout: 30000,
+    pageLoadTimeout: 30000,
 
     reporter: "cypress-multi-reporters",
     reporterOptions: {
