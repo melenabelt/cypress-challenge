@@ -32,7 +32,7 @@ class DetailPage {
   }
 
   validateAddRandomProductToCart() {
-    cy.get(indexPageLocators.productTitle).then((products) => {
+    cy.get(indexPageLocators.productTitle).should('exist').then((products) => {
       // Calculate random index
       const randomIndex = Math.floor(Math.random() * products.length);
 
