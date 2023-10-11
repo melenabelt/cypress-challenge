@@ -1,0 +1,12 @@
+{
+    "firstname": "Ele",
+    "lastname": "Correa",
+    "email": "elecorrea@email.com",
+    "gender": "Female",
+    "mobile": "3012345678",
+    "dateofbirth": "31 11 1994",
+    "hobbies": ["Music", "Reading"],
+    "currentaddress": "Av siempreViva # 123",
+    "state": "Haryana",
+    "city": "Panipat"
+}

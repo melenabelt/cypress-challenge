@@ -51,7 +51,6 @@ const cartLocators = {
     purchaseButton: 'button.btn.btn-primary',
 
     successPurchaseModal: 'div.sweet-alert.showSweetAlert.visible'
-
 }
 
 

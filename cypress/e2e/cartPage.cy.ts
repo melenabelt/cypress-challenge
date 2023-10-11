@@ -23,7 +23,6 @@ describe("Make a purchase", () => {
 
     it("Validate total prices are equal", () => {
         cy.visit("cart.html")
-        // cy.wait(5000)
         detailPage.validateTotalPrices();
     })
 

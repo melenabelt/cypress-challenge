@@ -6,6 +6,9 @@ module.exports = defineConfig({
     screenshotOnRunFailure: false,
     setupNodeEvents(on, config) {},
     baseUrl: "https://www.demoblaze.com/",
+    env: {
+      demoqaUrl: "https://demoqa.com/"
+    },
     defaultCommandTimeout: 20000,
     pageLoadTimeout: 20000,
 
