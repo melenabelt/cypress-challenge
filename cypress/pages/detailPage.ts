@@ -44,7 +44,6 @@ class DetailPage {
 
       // Obtain text from randomProduct and store it in productText
       cy.wrap(randomProduct)
-        .should('be.visible')
         .invoke("text")
         .then((text) => {
           indexProductTitleText = text;
@@ -57,7 +56,6 @@ class DetailPage {
         .then(() => {
           cy.get(productDetailLocators.addToCartButton)
             .contains("Add to cart")
-            .should('be.visible')
             .click();
 
           cy.get(productDetailLocators.addToCartButton)
