@@ -52,9 +52,8 @@ class DetailPage{
     }
 
     validateProdTitleAftAddToCart() {
-        
-        cy.get(productDetailLocators.productTitle).invoke('text').then((texto) => {
-            detailProductTitle = texto;
+        cy.get(productDetailLocators.productTitle).invoke('text').then((text) => {
+            detailProductTitle = text;
             cy.log(detailProductTitle);
         });
 
