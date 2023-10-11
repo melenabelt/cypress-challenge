@@ -46,7 +46,6 @@ class DemoQaFormPage {
         "contain",
         "Thanks for submitting the form"
       );
-
     });
   }
 }

@@ -1,86 +1,107 @@
-import { cartLocators, indexPageLocators, productDetailLocators } from "../support/locators";
+import {
+  cartLocators,
+  indexPageLocators,
+  productDetailLocators,
+} from "../support/locators";
 
 let indexProductTitleText: string;
 let detailProductTitle: string;
 
-class DetailPage{
-    constructor() {
-    }
+class DetailPage {
+  constructor() {}
 
-    choosePhonesCategory() {
-        cy.get(indexPageLocators.category).contains('Phones').should('exist').click();
-    }
+  choosePhonesCategory() {
+    cy.get(indexPageLocators.category)
+      .contains("Phones")
+      .should("exist")
+      .click();
+  }
 
-    chooseLaptopsCategory() {
-        cy.get(indexPageLocators.category).contains('Laptops').should('exist').click();
-    }
+  chooseLaptopsCategory() {
+    cy.get(indexPageLocators.category)
+      .contains("Laptops")
+      .should("exist")
+      .click();
+  }
 
-    chooseMonitorsCategory() {
-        cy.get(indexPageLocators.category).contains('Monitors').should('exist').click();
-    }
+  chooseMonitorsCategory() {
+    cy.get(indexPageLocators.category)
+      .contains("Monitors")
+      .should("exist")
+      .click();
+  }
 
-    validateAddRandomProductToCart() {
-    
-        cy.get(indexPageLocators.productTitle).then((products) => {
-            // Calculate random index
-            const randomIndex = Math.floor(Math.random() * products.length);
-          
-            // Select random product using index
-            const randomProduct = products[randomIndex];
-          
-            // Log the index for debugging
-            cy.log((randomIndex).toString());
-    
-            // Obtain text from randomProduct and store it in productText
-            cy.wrap(randomProduct).invoke('text').then((text) => {
-                indexProductTitleText = text;
-                cy.log(indexProductTitleText);
-            });
-          
-            // Try to click the element without other conditions first
-            cy.wrap(randomProduct).click().then(() => {
+  validateAddRandomProductToCart() {
+    cy.get(indexPageLocators.productTitle).then((products) => {
+      // Calculate random index
+      const randomIndex = Math.floor(Math.random() * products.length);
 
-                cy.get(productDetailLocators.addToCartButton).contains('Add to cart').click(); 
+      // Select random product using index
+      const randomProduct = products[randomIndex];
 
-                cy.get(productDetailLocators.addToCartButton).contains('Add to cart').click(); 
+      // Log the index for debugging
+      cy.log(randomIndex.toString());
 
-                cy.on("window:alert", (message) => {
-                    expect(message).to.include("Product added"); 
-                });
-            });
-        });
-    }
-
-    validateProdTitleAftAddToCart() {
-        cy.get(productDetailLocators.productTitle).invoke('text').then((text) => {
-            detailProductTitle = text;
-            cy.log(detailProductTitle);
+      // Obtain text from randomProduct and store it in productText
+      cy.wrap(randomProduct)
+        .invoke("text")
+        .then((text) => {
+          indexProductTitleText = text;
+          cy.log(indexProductTitleText);
         });
 
-        expect(indexProductTitleText).to.equal(detailProductTitle);
-    }
+      // Try to click the element without other conditions first
+      cy.wrap(randomProduct)
+        .click()
+        .then(() => {
+          cy.get(productDetailLocators.addToCartButton)
+            .contains("Add to cart")
+            .click();
 
-    validateTotalPrices() {
-        let total = 0;
+          cy.get(productDetailLocators.addToCartButton)
+            .contains("Add to cart")
+            .click();
 
-        // Select prices
-        cy.get(cartLocators.priceList).each(($el) => {
-        const priceText = $el.text().replace('$', '');
+          cy.on("window:alert", (message) => {
+            expect(message).to.include("Product added");
+          });
+        });
+    });
+  }
+
+  validateProdTitleAftAddToCart() {
+    cy.get(productDetailLocators.productTitle)
+      .invoke("text")
+      .then((text) => {
+        detailProductTitle = text;
+        cy.log(detailProductTitle);
+      });
+
+    expect(indexProductTitleText).to.equal(detailProductTitle);
+  }
+
+  validateTotalPrices() {
+    let total = 0;
+
+    // Select prices
+    cy.get(cartLocators.priceList)
+      .each(($el) => {
+        const priceText = $el.text().replace("$", "");
         const price = parseFloat(priceText);
 
         // Suma el precio al total
         total += price;
-        }).then(() => {
-            cy.log('Total: $' + total.toFixed(0)); // Mostrar el total con cero decimales
-        });
+      })
+      .then(() => {
+        cy.log("Total: $" + total.toFixed(0)); // Mostrar el total con cero decimales
+      });
 
-        cy.get(cartLocators.totalPriceTitle).invoke('text').then((texto) => {
-            expect(total.toString()).to.equal(texto)
-        });
-
-    }
-
+    cy.get(cartLocators.totalPriceTitle)
+      .invoke("text")
+      .then((texto) => {
+        expect(total.toString()).to.equal(texto);
+      });
+  }
 }
-    
 
 export default DetailPage;
