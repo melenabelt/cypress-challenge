@@ -55,12 +55,10 @@ class DetailPage {
         .click()
         .then(() => {
           cy.get(productDetailLocators.addToCartButton)
-            .contains("Add to cart")
+            .contains("Add to cart").as('btn')
             .click();
 
-          cy.get(productDetailLocators.addToCartButton)
-            .contains("Add to cart")
-            .click();
+          cy.get('@btn').click();
 
           cy.on("window:alert", (message) => {
             expect(message).to.include("Product added");
