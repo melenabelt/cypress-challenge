@@ -7,7 +7,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {},
     baseUrl: "https://www.demoblaze.com/",
     env: {
-      demoqaUrl: "https://demoqa.com/"
+      demoqaUrl: "https://demoqa.com/",
+      fileUploaderUrl: "https://the-internet.herokuapp.com/"
     },
     defaultCommandTimeout: 20000,
     pageLoadTimeout: 20000,
