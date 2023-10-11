@@ -1,7 +1,5 @@
 import { formLocators } from "../support/demoqaLocators";
 
-let modalTitleText: string;
-
 class DemoQaFormPage {
   constructor() {}
 
