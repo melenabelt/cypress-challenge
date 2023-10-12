@@ -70,15 +70,14 @@ class DetailPage {
   }
 
   validateProdTitleAftAddToCart() {
-    cy.get(productDetailLocators.productTitle)
-      .invoke("text")
-      .then((text) => {
-        detailProductTitle = text;
-        cy.log(detailProductTitle);
-      });
-
-    expect(indexProductTitleText).to.equal(detailProductTitle);
+    cy.get(productDetailLocators.productTitle).should('be.visible').invoke("text").then((text) => {
+      detailProductTitle = text;
+      cy.log("Product title after adding to cart: " + detailProductTitle);
+  
+      expect(indexProductTitleText).to.equal(detailProductTitle);
+    });
   }
+  
 
   validateTotalPrices() {
     let total = 0;
