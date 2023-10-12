@@ -12,6 +12,7 @@ module.exports = defineConfig({
       demoqaUrl: "https://demoqa.com/",
       fileUploaderUrl: "https://the-internet.herokuapp.com/",
       w3schoolUrl: "https://www.w3schools.com/",
+      "RETRIES": 3
     },
     defaultCommandTimeout: 30000,
     pageLoadTimeout: 30000,
