@@ -13,8 +13,8 @@ module.exports = defineConfig({
       fileUploaderUrl: "https://the-internet.herokuapp.com/",
       w3schoolUrl: "https://www.w3schools.com/",
     },
-    defaultCommandTimeout: 20000,
-    pageLoadTimeout: 20000,
+    defaultCommandTimeout: 30000,
+    pageLoadTimeout: 30000,
 
     reporter: "cypress-multi-reporters",
     reporterOptions: {
