@@ -13,17 +13,64 @@ class IframePage {
 
   getFrameTitle() {
     cy.enter(iframe.iframe).then((getBody) => {
-      getBody().find(iframe.mainTitle).should("contain", "HTML Tutorial");
+      cy.wrap(null) // Usamos cy.wrap(null) como un marcador de posición
+        .then(() => {
+          const maxTry = 5; 
+          let tries = 0;
+
+          function performActionAndVerify() {
+            getBody().find(iframe.mainTitle).should("contain", "HTML Tutorial");
+          }
+
+          // Cycle to retry in case action fails
+          function retry() {
+            tries++; 
+            if (tries <= maxTry) {
+              // Perform action in every try
+              performActionAndVerify();
+            }
+          }
+
+          // Perform initial action
+          performActionAndVerify();
+
+          // We use a cycle to retry in case it's necessary
+          while (tries < maxTry) {
+            retry();
+          }
+        });
     });
   }
 
   goToCssPageInFrame() {
     cy.enter(iframe.iframe).then((getBody) => {
-      getBody().find(iframe.cssNavbarItem).click();
-      getBody()
-        .find(iframe.cssNavbarItem)
-        .should("have.attr", "title")
-        .and("include", "CSS Tutorial");
+      cy.wrap(null) 
+        .then(() => {
+          const maxTry = 3; 
+          let tries = 0;
+
+          function performActionAndVerify() {
+            getBody().find(iframe.cssNavbarItem).click();
+            getBody()
+              .find(iframe.cssNavbarItem)
+              .should("have.attr", "title")
+              .and("include", "CSS Tutorial");
+          }
+
+
+          function retry() {
+            tries++; 
+            if (tries <= maxTry) {
+              performActionAndVerify();
+            }
+          }
+
+          performActionAndVerify();
+
+          while (tries < maxTry) {
+            retry();
+          }
+        });
     });
   }
 }
