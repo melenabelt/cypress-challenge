@@ -70,12 +70,10 @@ class DetailPage {
   }
 
   validateProdTitleAftAddToCart() {
-    // Esperar a que el título del producto sea visible y obtenerlo
     cy.get(productDetailLocators.productTitle).should('be.visible').invoke("text").then((text) => {
       detailProductTitle = text;
       cy.log("Product title after adding to cart: " + detailProductTitle);
   
-      // Comprobar que los títulos coinciden
       expect(indexProductTitleText).to.equal(detailProductTitle);
     });
   }
