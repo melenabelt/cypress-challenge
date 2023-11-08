@@ -15,7 +15,7 @@ This project includes several useful NPM scripts to help you run, test, lint, an
 1. Clone this repository to your system:
 
    ```shell
-   git clone https://github.com/melenabelt/wdio-ts-bootcamp-2/
+   git clone https://github.com/melenabelt/cypress-challenge/
    ```
 
 2. Navigate to the project directory:
